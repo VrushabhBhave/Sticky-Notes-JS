@@ -61,6 +61,7 @@
     height: 100%;
     padding: 1rem;
     overflow: auto;
+    position: relative;
 }
 
 #right h1{
@@ -112,12 +113,6 @@
     justify-content: space-between;
 }
 
-/* .editNote{
-    height: 100%;
-    width: 100%;
-    padding: 0.5rem;
-    background-color: transparent;
-} */
 
 .edit{
     bottom: 0;
@@ -129,7 +124,34 @@
     resize: none;
 }
 
+/* for undo button  */
+#right .undo{
+    width: 120px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    border: 1px solid;
+    height: 2rem;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background-color: rgb(107, 114, 128);
+}
 
+.background{
+    background: linear-gradient(to right, #ed6ea0, #ec8c69,#f7186a, #fbb03b);
+    background-size: 300%;
+    box-shadow: 2px 2px 10px #ed6ea0;
+}
+
+#right .undo:hover{
+    background-position: 100% 0;
+}
+
+/* for scrollbar  */
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -144,10 +166,12 @@
 /* Handle (the moving part) */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom,#f7186a, #fbb03b);
-    /* border-radius: 10px; */
 }
 
 
+
+
+/* for responsive */
 @media screen and (max-width:900px){
     #wrapper{
         width: 100vw;
