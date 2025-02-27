@@ -15,7 +15,7 @@ form.addEventListener("submit", (e) => {
     console.log(formattedDateTime);
 
     e.preventDefault();
-    const span = document.querySelector("#right span");
+    const span = document.querySelector("#right .span");
     span.style.display = "none";
     const content = document.createElement("div");
     const note = document.createElement("div");
@@ -55,15 +55,18 @@ form.addEventListener("submit", (e) => {
 
     edit.addEventListener("click", () => {
         let displayValue = editableInput.style.display;
+        
         if(displayValue === "none"){
+            editableInput.value = note.innerText;
             edit.classList.remove("fa-pencil");
             edit.classList.add("fa-floppy-disk");
             editableInput.style.display = "block";
+            editableInput.focus();
         }else{
             edit.classList.remove("fa-floppy-disk");
             edit.classList.add("fa-pencil");
-            editableInput.style.display = "none";
             note.innerText = editableInput.value;
+            editableInput.style.display = "none";
         }
     })
 
@@ -71,9 +74,10 @@ form.addEventListener("submit", (e) => {
     buttonDiv.append(dt);
     buttonDiv.append(remove);
     content.append(buttonDiv);
-    note.append(editableInput);
+    content.append(editableInput);
     content.append(note);
     notesContainer.append(content);
     textarea.value = "";
+    textarea.focus();
   }
 });

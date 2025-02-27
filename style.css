@@ -112,12 +112,12 @@
     justify-content: space-between;
 }
 
-.editNote{
+/* .editNote{
     height: 100%;
     width: 100%;
     padding: 0.5rem;
     background-color: transparent;
-}
+} */
 
 .edit{
     bottom: 0;
@@ -126,6 +126,7 @@
     position: absolute;
     font-size: 0.8rem;
     padding: 0.5rem;
+    resize: none;
 }
 
 
